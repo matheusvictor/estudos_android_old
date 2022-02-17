@@ -2,6 +2,10 @@ package com.matheusvictor.dio.mycontacts
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.matheusvictor.dio.mycontacts.adapter.ContactAdapter
@@ -36,6 +40,30 @@ class MainActivity : AppCompatActivity() {
                 Contact("Matheus Victor", "(00) 0000-0000", "img.png")
             )
         )
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.item1 -> {
+                showToast("Item 1")
+                true
+            }
+            R.id.item2 -> {
+                showToast("Item 2")
+                true
+            }
+            else -> return onOptionsItemSelected(item)
+        }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
 }
