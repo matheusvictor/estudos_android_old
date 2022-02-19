@@ -13,6 +13,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.matheusvictor.dio.mycontacts.ContactDetailActivity.Companion.EXTRA_CONTACT
 import com.matheusvictor.dio.mycontacts.adapter.ContactAdapter
 import com.matheusvictor.dio.mycontacts.model.Contact
 
@@ -44,7 +45,8 @@ class MainActivity : AppCompatActivity(), ClickItemContactListener {
         adapter.updateList(
             arrayListOf(
                 Contact("Matheus Victor", "(00) 0000-0000", "img.png"),
-                Contact("Matheus Victor", "(00) 0000-0000", "img.png")
+                Contact("Jorel's Brother", "(99) 9999-9999", "img.png"),
+                Contact("Mr. Adelino", "(22) 2222-2222", "img.png")
             )
         )
     }
@@ -93,6 +95,7 @@ class MainActivity : AppCompatActivity(), ClickItemContactListener {
 
     override fun clickItemContact(contact: Contact) {
         val intent = Intent(this, ContactDetailActivity::class.java)
+        intent.putExtra(EXTRA_CONTACT, contact)
         startActivity(intent)
     }
 
