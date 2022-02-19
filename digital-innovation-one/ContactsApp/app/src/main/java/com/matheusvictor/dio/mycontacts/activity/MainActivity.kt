@@ -1,6 +1,8 @@
 package com.matheusvictor.dio.mycontacts.activity
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -10,9 +12,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.edit
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.matheusvictor.dio.mycontacts.R
 import com.matheusvictor.dio.mycontacts.activity.ContactDetailActivity.Companion.EXTRA_CONTACT
 import com.matheusvictor.dio.mycontacts.adapter.ContactAdapter
@@ -31,26 +36,44 @@ class MainActivity : AppCompatActivity(), ClickItemContactListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.drawer_menu)
 
-        bindView()
-        updateList()
-
+        fetchContactList()
         initDrawer()
+        bindView()
 
     }
 
     private fun bindView() {
         rvList.adapter = adapter
         rvList.layoutManager = LinearLayoutManager(this)
+        updateList()
+    }
+
+    private fun fetchContactList() {
+        val list = arrayListOf(
+            Contact("Matheus Victor", "(00) 0000-0000", "img.png"),
+            Contact("Jorel's Brother", "(99) 9999-9999", "img.png"),
+            Contact("Mr. Adelino", "(22) 2222-2222", "img.png")
+        )
+
+        getInstanceSharedPreferences().edit {
+            // convert Contact class object to Json with Gson lib
+            putString("contacts", Gson().toJson(list))
+            commit()
+        }
+    }
+
+    private fun getInstanceSharedPreferences(): SharedPreferences {
+        return getSharedPreferences("com.matheusvictor.dio.PREFERENCES", Context.MODE_PRIVATE)
     }
 
     private fun updateList() {
-        adapter.updateList(
-            arrayListOf(
-                Contact("Matheus Victor", "(00) 0000-0000", "img.png"),
-                Contact("Jorel's Brother", "(99) 9999-9999", "img.png"),
-                Contact("Mr. Adelino", "(22) 2222-2222", "img.png")
-            )
-        )
+        adapter.updateList(getContactList())
+    }
+
+    private fun getContactList(): List<Contact> {
+        val list = getInstanceSharedPreferences().getString("contacts", "[]")
+        val turnsType = object : TypeToken<List<Contact>>() {}.type
+        return Gson().fromJson(list, turnsType)
     }
 
     private fun initDrawer() {
