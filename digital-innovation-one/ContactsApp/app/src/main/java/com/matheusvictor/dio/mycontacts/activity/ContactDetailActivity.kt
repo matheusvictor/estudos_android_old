@@ -1,10 +1,10 @@
-package com.matheusvictor.dio.mycontacts
+package com.matheusvictor.dio.mycontacts.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
+import com.matheusvictor.dio.mycontacts.R
 import com.matheusvictor.dio.mycontacts.model.Contact
 
 class ContactDetailActivity : AppCompatActivity() {

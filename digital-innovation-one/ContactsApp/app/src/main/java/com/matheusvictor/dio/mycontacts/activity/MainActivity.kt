@@ -1,4 +1,4 @@
-package com.matheusvictor.dio.mycontacts
+package com.matheusvictor.dio.mycontacts.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -13,8 +13,10 @@ import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.matheusvictor.dio.mycontacts.ContactDetailActivity.Companion.EXTRA_CONTACT
+import com.matheusvictor.dio.mycontacts.R
+import com.matheusvictor.dio.mycontacts.activity.ContactDetailActivity.Companion.EXTRA_CONTACT
 import com.matheusvictor.dio.mycontacts.adapter.ContactAdapter
+import com.matheusvictor.dio.mycontacts.listener.ClickItemContactListener
 import com.matheusvictor.dio.mycontacts.model.Contact
 
 class MainActivity : AppCompatActivity(), ClickItemContactListener {
@@ -67,7 +69,6 @@ class MainActivity : AppCompatActivity(), ClickItemContactListener {
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater: MenuInflater = menuInflater

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.matheusvictor.dio.mycontacts.ClickItemContactListener
+import com.matheusvictor.dio.mycontacts.listener.ClickItemContactListener
 import com.matheusvictor.dio.mycontacts.R
 import com.matheusvictor.dio.mycontacts.model.Contact
 

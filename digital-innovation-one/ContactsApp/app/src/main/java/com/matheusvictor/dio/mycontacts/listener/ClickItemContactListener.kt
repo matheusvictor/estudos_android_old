@@ -1,4 +1,4 @@
-package com.matheusvictor.dio.mycontacts
+package com.matheusvictor.dio.mycontacts.listener
 
 import com.matheusvictor.dio.mycontacts.model.Contact
 
