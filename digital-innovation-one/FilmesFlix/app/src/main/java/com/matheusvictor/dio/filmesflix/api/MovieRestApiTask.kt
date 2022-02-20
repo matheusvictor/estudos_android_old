@@ -14,6 +14,6 @@ class MoviesRestApiTask {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    private fun retrofitApi(): MoviesApi = movieProvider().create(MoviesApi::class.java)
+    fun retrofitApi(): MovieApi = movieProvider().create(MovieApi::class.java)
 
 }

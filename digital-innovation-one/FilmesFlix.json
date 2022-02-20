@@ -1,0 +1,30 @@
+[
+    {
+      "id": 0,
+      "title": "Vingadores: Guerra infinita",
+      "image": "https://nyc3.digitaloceanspaces.com/open-api-spaces/open-api-static/blog/1/Infinity_War-infinity_war.png",
+      "description": "Os vingadores e seus aliados irão sacrificar tudo na tentativa de derrotar o poderoso Thanos antes que ele devaste o mundo e arruine o universo com um estalar de dedos.",
+      "releaseDate": "26/04/2018"
+    },
+    {
+      "id": 1,
+      "title": "Bem-Vindo a selva",
+      "image": "https://nyc3.digitaloceanspaces.com/open-api-spaces/open-api-static/blog/1/The_Rundown-the_rundown.png",
+      "description": "Um aspirante a chef durão é contratado para trazer para casa o filho de um mafioso da Amazônia, mas ele acaba se envolvendo na luta contra um opressor operador urbano em sua busca por um tesouro lendário",
+      "releaseDate": "26/09/2003"
+    },
+    {
+      "id": 2,
+      "title": "O poderoso chefão",
+      "image": "https://nyc3.digitaloceanspaces.com/open-api-spaces/open-api-static/blog/1/The_Godfather-fragment_factory.png",
+      "description": "O já idoso patriarca de uma dinastia do crime organizado transfere o controle de seu império clandestino para seu filho relutante.",
+      "releaseDate": "07/07/1972"
+    },
+    {
+      "id": 3,
+      "title": "Senhor dos Anéis: O retorno do rei.",
+      "image": "https://nyc3.digitaloceanspaces.com/open-api-spaces/open-api-static/blog/1/The_Lord_of_the_Rings_The_Return_of_the_King-fragment_factory_2.png",
+      "description": "Gandalf e Aragorn lideram o Mundo dos Homens contra o exército de Sauron para desviar seu olhar de Frodo e Sam enquanto eles se aproximam do Monte da Perdição com o um anel.",
+      "releaseDate": "25/12/2003"
+    }
+  ]
