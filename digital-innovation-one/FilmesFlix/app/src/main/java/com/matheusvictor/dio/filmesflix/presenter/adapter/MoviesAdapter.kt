@@ -1,4 +1,4 @@
-package com.matheusvictor.dio.filmesflix.adapter
+package com.matheusvictor.dio.filmesflix.presenter.adapter
 
 import android.view.LayoutInflater
 import android.view.View

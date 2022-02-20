@@ -1,10 +1,12 @@
-package com.matheusvictor.dio.filmesflix.repository
+package com.matheusvictor.dio.filmesflix.implementations
 
 import android.util.Log
-import com.matheusvictor.dio.filmesflix.api.MovieRestApiTask
+import com.matheusvictor.dio.filmesflix.framework.api.MovieRestApiTask
+import com.matheusvictor.dio.filmesflix.data.MovieDataSource
 import com.matheusvictor.dio.filmesflix.domain.Movie
 
-class MovieRepository(private val movieRestApiTask: MovieRestApiTask) {
+class MovieDataSourceImplementation(private val movieRestApiTask: MovieRestApiTask) :
+    MovieDataSource {
 
     companion object {
         const val TAG = "MovieRepository"
@@ -12,7 +14,7 @@ class MovieRepository(private val movieRestApiTask: MovieRestApiTask) {
 
     private val movieList = arrayListOf<Movie>()
 
-    fun getAllMovies(): List<Movie> {
+    override fun getAllMovies(): List<Movie> {
         val request = movieRestApiTask.retrofitApi().getAllMovies().execute()
 
         if (request.isSuccessful) {

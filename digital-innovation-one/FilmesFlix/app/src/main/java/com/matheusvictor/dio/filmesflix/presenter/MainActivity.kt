@@ -1,4 +1,4 @@
-package com.matheusvictor.dio.filmesflix.view
+package com.matheusvictor.dio.filmesflix.presenter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,9 +6,9 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.matheusvictor.dio.filmesflix.R
-import com.matheusvictor.dio.filmesflix.adapter.MoviesAdapter
+import com.matheusvictor.dio.filmesflix.presenter.adapter.MoviesAdapter
 import com.matheusvictor.dio.filmesflix.domain.Movie
-import com.matheusvictor.dio.filmesflix.viewmodel.MovieListViewModel
+import com.matheusvictor.dio.filmesflix.framework.viewmodel.MovieListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

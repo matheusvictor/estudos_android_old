@@ -1,4 +1,4 @@
-package com.matheusvictor.dio.filmesflix.api
+package com.matheusvictor.dio.filmesflix.framework.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

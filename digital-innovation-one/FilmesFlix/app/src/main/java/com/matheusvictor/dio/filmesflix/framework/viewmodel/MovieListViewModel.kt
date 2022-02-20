@@ -1,12 +1,14 @@
-package com.matheusvictor.dio.filmesflix.viewmodel
+package com.matheusvictor.dio.filmesflix.framework.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.matheusvictor.dio.filmesflix.api.MovieRestApiTask
+import com.matheusvictor.dio.filmesflix.framework.api.MovieRestApiTask
+import com.matheusvictor.dio.filmesflix.data.MovieRepository
 import com.matheusvictor.dio.filmesflix.domain.Movie
-import com.matheusvictor.dio.filmesflix.repository.MovieRepository
+import com.matheusvictor.dio.filmesflix.implementations.MovieDataSourceImplementation
+import com.matheusvictor.dio.filmesflix.usecase.MoviesListUseCase
 import java.lang.Exception
 
 class MovieListViewModel : ViewModel() {
@@ -16,7 +18,9 @@ class MovieListViewModel : ViewModel() {
     }
 
     private val moviesRestApiTask = MovieRestApiTask()
-    private val mMovieRepository = MovieRepository(moviesRestApiTask)
+    private val movieDataSource = MovieDataSourceImplementation(moviesRestApiTask)
+    private val mMovieRepository = MovieRepository(movieDataSource)
+    private val moviesListUseCase = MoviesListUseCase(mMovieRepository)
 
     fun init() {
         getAllMovies()
@@ -28,7 +32,7 @@ class MovieListViewModel : ViewModel() {
     private fun getAllMovies() {
         Thread {
             try {
-                mMovieList.postValue(mMovieRepository.getAllMovies())
+                mMovieList.postValue(moviesListUseCase.invoke())
             } catch (e: Exception) {
                 Log.d(TAG, e.message.toString())
             }
