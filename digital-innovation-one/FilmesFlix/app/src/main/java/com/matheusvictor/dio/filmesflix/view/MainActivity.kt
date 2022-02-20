@@ -1,4 +1,4 @@
-package com.matheusvictor.dio.filmesflix.activity
+package com.matheusvictor.dio.filmesflix.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,25 +13,25 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var movieLiViewModel: MovieListViewModel
+    private lateinit var movieListViewModel: MovieListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        movieLiViewModel =
+        movieListViewModel =
             ViewModelProvider.NewInstanceFactory().create(MovieListViewModel::class.java)
-        movieLiViewModel.init()
+        movieListViewModel.init()
 
         observer()
         showLoadVisibility(true)
     }
 
     private fun observer() {
-        movieLiViewModel.movieList.observe(this, Observer { list ->
+        movieListViewModel.movieList.observe(this, Observer { list ->
             if (list.isNotEmpty()) {
-                showLoadVisibility(false)
                 populateMovieList(list)
+                showLoadVisibility(false)
             }
         })
     }
