@@ -1,6 +1,6 @@
 package com.matheusvictor.dio.filmesflix.api
 
-import com.matheusvictor.dio.filmesflix.model.Movie
+import com.matheusvictor.dio.filmesflix.domain.Movie
 import retrofit2.Call
 import retrofit2.http.GET
 

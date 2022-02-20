@@ -2,7 +2,7 @@ package com.matheusvictor.dio.filmesflix.repository
 
 import android.util.Log
 import com.matheusvictor.dio.filmesflix.api.MovieRestApiTask
-import com.matheusvictor.dio.filmesflix.model.Movie
+import com.matheusvictor.dio.filmesflix.domain.Movie
 
 class MovieRepository(private val movieRestApiTask: MovieRestApiTask) {
 

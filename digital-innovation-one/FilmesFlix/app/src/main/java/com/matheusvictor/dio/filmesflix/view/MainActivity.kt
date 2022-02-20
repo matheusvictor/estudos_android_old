@@ -7,7 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.matheusvictor.dio.filmesflix.R
 import com.matheusvictor.dio.filmesflix.adapter.MoviesAdapter
-import com.matheusvictor.dio.filmesflix.model.Movie
+import com.matheusvictor.dio.filmesflix.domain.Movie
 import com.matheusvictor.dio.filmesflix.viewmodel.MovieListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
