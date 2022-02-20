@@ -3,7 +3,7 @@ package com.matheusvictor.dio.filmesflix.api
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MoviesRestApiTask {
+class MovieRestApiTask {
 
     companion object {
         const val BASE_URL = "https://raw.githubusercontent.com/"
