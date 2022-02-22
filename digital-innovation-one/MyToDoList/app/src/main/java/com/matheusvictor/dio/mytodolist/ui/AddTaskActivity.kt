@@ -1,5 +1,6 @@
 package com.matheusvictor.dio.mytodolist.ui
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -63,7 +64,8 @@ class AddTaskActivity : AppCompatActivity() {
                 hour = binding.taskHour.formatText
             )
             TaskDataSource.insertTask(newTask)
-            Log.e("TEST", "teste" + TaskDataSource.getList())
+            setResult(Activity.RESULT_OK)
+            finish()
         }
 
     }
