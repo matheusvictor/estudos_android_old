@@ -2,4 +2,6 @@
     <string name="app_name">My ToDo List</string>
     <string name="tasks">Tasks</string>
     <string name="float_button_description">Add new Task</string>
+    <string name="edit_option_menu">Edit</string>
+    <string name="delete_option_menu">Delete</string>
 </resources>
