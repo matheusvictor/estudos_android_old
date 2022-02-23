@@ -23,6 +23,16 @@ class AddTaskActivity : AppCompatActivity() {
         binding = ActivityAddTaskBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        if (intent.hasExtra(TASK_ID)) {
+            val taskId = intent.getIntExtra(TASK_ID, 0)
+            TaskDataSource.findById(taskId)?.let {
+                binding.taskTitle.formatText = it.title
+                binding.taskDescription.formatText = it.description.toString()
+                binding.taskDate.formatText = it.date
+                binding.taskHour.formatText = it.hour
+            }
+        }
+
         insertListeners()
 
     }
@@ -58,6 +68,7 @@ class AddTaskActivity : AppCompatActivity() {
 
         binding.btnAddTask.setOnClickListener {
             val newTask = Task(
+                id = intent.getIntExtra(TASK_ID, 0),
                 title = binding.taskTitle.formatText,
                 description = binding.taskDescription.formatText,
                 date = binding.taskDate.formatText,
@@ -68,6 +79,10 @@ class AddTaskActivity : AppCompatActivity() {
             finish()
         }
 
+    }
+
+    companion object {
+        const val TASK_ID = "task_id"
     }
 
 }

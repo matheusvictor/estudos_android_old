@@ -39,7 +39,6 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_task_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="text" />
