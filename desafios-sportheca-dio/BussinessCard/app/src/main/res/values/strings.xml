@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">BussinessCard</string>
     <string name="label_business_cards">Business Card</string>
+    <string name="label_description_new_card">New Card</string>
+    <string name="name_hint">Name</string>
+    <string name="input_phone">Phone</string>
+    <string name="input_email">E-mail</string>
+    <string name="input_company">Company</string>
+    <string name="select_a_card_color">Select a card color</string>
+    <string name="label_confirm">Confirm</string>
 </resources>
