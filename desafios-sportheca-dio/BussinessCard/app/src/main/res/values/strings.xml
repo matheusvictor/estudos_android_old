@@ -8,4 +8,5 @@
     <string name="input_company">Company</string>
     <string name="select_a_card_color">Select a card color</string>
     <string name="label_confirm">Confirm</string>
+    <string name="label_show_success">Card created with success</string>
 </resources>
