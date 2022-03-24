@@ -13,9 +13,7 @@ import com.matheusvictor.dio.bussinesscard.databinding.ItemBusinessCardBinding
 class BusinessCardAdapter :
     ListAdapter<BusinessCard, BusinessCardAdapter.ViewHolder>(DiffCallback()) {
 
-    var listenerShared: (View) -> Unit = {
-
-    }
+    var listenerShare: (View) -> Unit = {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -38,10 +36,9 @@ class BusinessCardAdapter :
             binding.tvCompany.text = item.company
             binding.cardContent.setBackgroundColor(Color.parseColor(item.colorBackground))
             binding.cardContent.setOnClickListener {
-                listenerShared(it)
+                listenerShare(it)
             }
         }
-
     }
 }
 
